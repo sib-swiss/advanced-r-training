@@ -1,20 +1,27 @@
+### Course location
 
-## UNIX
+University of Lausanne,  Cubotron Building, UNIL-Sorge
+Room: CUB-233 (Auditoire III)
+[Map](https://planete.unil.ch/?local=CUB-233)
+ 
+Course time: 9:00 to 17:00 each day. Please arrive a few minutes early.
 
-As is stated in the course prerequisites at the [announcement web page](https://www.sib.swiss/training/), we expect participants to have a basic understanding of working with the command line on UNIX-based systems. You can test your UNIX skills with a quiz [here](https://docs.google.com/forms/d/e/1FAIpQLSd2BEWeOKLbIRGBT_aDEGPce1FOaVYBbhBiaqcaHoBKNB27MQ/viewform?usp=sf_link). If you don't have experience with UNIX command line, or if you're unsure whether you meet the prerequisites, follow our [online UNIX tutorial](https://edu.sib.swiss/pluginfile.php/2878/mod_resource/content/4/couselab-html/content.html).
+### Software to install
+Before the course starts, please install R (> version 4.4.0) and the latest version of R Studio.
 
-## Software
+https://cran.r-project.org/
+https://rstudio.com/products/rstudio/download/#download
+ 
+### Shared Doc
 
-We will be mainly working on an Amazon Web Services ([AWS](https://aws.amazon.com/))  Elastic Cloud (EC2) server. Our Ubuntu server behaves like a 'normal' remote server, and can be approached through `ssh` with a username, key and IP address. All participants will be granted access to a personal home directory.
-
-Before the course, make sure you can comfortably work on a remote server. This means that you can approach it through the shell, modify scripts and transfer files. We can recommend `atom` for Linux and Mac, and `Notepad ++` in combination with MobaXterm for Windows. We will be visualising our results with IGV. Therefore, install in your computer:
-
-=== "mac OS/Linux"
-    * SSH and scripting: [Atom](https://atom.io/) with packages like: [`terminus`](https://atom.io/packages/terminus) and [`ftp-remote-edit`](https://atom.io/packages/ftp-remote-edit)
-    * Transferring files: [FileZilla](https://filezilla-project.org/)
-    * [Integrative Genomics Viewer (IGV)](http://software.broadinstitute.org/software/igv/)
-
-=== "Windows"
-    * SSH and scripting: [MobaXterm](https://mobaxterm.mobatek.net/ "get MobaXterm") and/or [Notepad++](https://notepad-plus-plus.org/downloads/) with the plugin `NppFTP`
-    * Transferring files: [FileZilla](https://filezilla-project.org/)
-    * [Integrative Genomics Viewer (IGV)](http://software.broadinstitute.org/software/igv/)
+We also have a ​docx icon [Shared document](https://sibcloud-my.sharepoint.com/:w:/g/personal/patricia_palagi_sib_swiss/ES6FOXcRfaxLkDjpKx5DIeYBczLWAo9MPGlgFJZVZESUPQ?e=9mhXIx) to simplify the exchanges of information with you during the lectures Advanced programming with R_September 2024
+ 
+Social Gathering: At the end of Day 1, there will be a Social Apéro at 17h15h. Please, let us know if you wish to attend by Thursday here: https://docs.google.com/forms/d/e/1FAIpQLSeUuR6m283aGf9VcVWfwo68ND6mKSy257iFOoeu_nMnPDmDFw/viewform?usp=pp_url
+ 
+Wi-Fi:
+with Eduroam account (member of a university): please connect to eduroam wifi network by following the guidelines of your home institution.
+without Eduroam account: please connect to public-unil or freewifi-epfl, a free, instant Internet access for visitors.
+ 
+Code of Conduct: 
+SIB abides by the ELIXIR Code of Conduct. We want to ensure all those participating in our courses can interact in a respectful and safe environment. If you experience or witness any unacceptable behavior, please let me know.   
+ 
