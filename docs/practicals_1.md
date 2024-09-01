@@ -9,7 +9,10 @@ Check how R implements "factors" in principle. For example, where are the labels
 # Exercice 2
 Suppose that you are given information about the amount of fertilizer used on several parts of a field, in the form of a factor:
 
+```r 
 fert <- factor( c(10, 20, 50, 30, 10, 20, 10, 45) )
+```
+
 Starting from the factor, how would you calculate the mean amount of fertilizer used ?
 
 # Exercise 3
