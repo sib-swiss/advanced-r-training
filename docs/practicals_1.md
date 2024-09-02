@@ -1,10 +1,26 @@
 Apart from the exercices suggested below, we suggest that you experiment with the topics we discussed this morning (especially those that you do not feel comfortable with): create and work with lists and factors, explore objects, etc.
 
 # Exercice 0
-If you are not comfortable yet with knitr and markdown, try them -- ask for help and material if required.
+If you are not comfortable yet with knitr and RMarkdown, try them. You can follow
+the exercises given at the end of the introductory slides. Do not hesitate
+to ask for help and material if required (we will not discuss knitr and
+Rmarkdown in more details during this course).
 
 # Exercise 1
-Check how R implements "factors" in principle. For example, where are the labels and the fact that the factor is ordered stored ? Where is the function that prints a factor, and the function that makes a summary out of the factor ?
+Suppose we have a list of amino acids, their masses and a protein sequence:
+
+```r 
+aminoacids <- c("A", "R", "N", "D", "C", "E", "Q", "G", "H", "I", "L", "K", "M", "F", "P", "S", "T", "W", "Y", "V" )
+masses <- c(71.0788, 156.1875, 114.1038, 115.0886, 103.1388, 129.1155, 128.1307, 57.0519, 137.1411, 113.1594, 113.1594, 128.1741, 131.1926, 147.1766, 97.1167, 87.0782, 101.1051, 186.2132, 163.1760, 99.1326)
+protein <- "MEFARILOP"
+```
+
+How can we use R to efficiently calculate the mass of the protein ?
+
+Hint: you can split the string using the strsplit() in order to get
+individual letters, and then create some lookup table to find the masses
+and sum them.
+
 
 # Exercice 2
 Suppose that you are given information about the amount of fertilizer used on several parts of a field, in the form of a factor:
@@ -80,7 +96,12 @@ summary(model_anova)
 
 How would you extract the p-value provided by this model into a "pvalue" variable ?
 
-# Exercice 5
+
+# Exercise 5
+Check how R implements "factors" in principle. For example, where are the labels and the fact that the factor is ordered stored ? Where is the function that prints a factor, and the function that makes a summary out of the factor ?
+
+
+# Exercice 6
 Create an S3 class from scratch; imagine the name of the class, a function that creates it (and includes some data in it), and define at least a print(), a summary() and a plot() methods for it.
 
 If you are looking for ideas, implement the following class:
@@ -90,7 +111,7 @@ Class "geneexpr", which contains expression values for a set of genes, in the fo
 "plot" should plot a histogram of the values.
 (for the next part, you may need to wait until we have progressed further in the course, talking about data manipulation). If you want to go further, you can implement a "diffexpr" function, which will take 2 genexpr objects and calculate the differental expression (difference of expression) between the genes. It will have to take into account the fact that the two gene lists may not contain the same genes. In a second step, it should also be able to take into account duplicate gene measurements, in a way or another (average them ? take only the maximum ?).
 
-# Exercice 6
+# Exercice 7
 The summary() function, when applied to numeric values, displays the "five-number summary" of the values, as in the following example:
 
 ```r 

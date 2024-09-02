@@ -1,15 +1,3 @@
-# Exercise 0
-Suppose we have a list of amino acids, their masses and a protein sequence:
-
-```r 
-aminoacids <- c("A", "R", "N", "D", "C", "E", "Q", "G", "H", "I", "L", "K", "M", "F", "P", "S", "T", "W", "Y", "V" )
-masses <- c(71.0788, 156.1875, 114.1038, 115.0886, 103.1388, 129.1155, 128.1307, 57.0519, 137.1411, 113.1594, 113.1594, 128.1741, 131.1926, 147.1766, 97.1167, 87.0782, 101.1051, 186.2132, 163.1760, 99.1326)
-protein <- "MEFARILOP"
-```
-
-How can we use R to calculate the mass of the protein ?
-
-Hint: you can split the string using strsplit, order to get individual letters, and then create some lookup table to find the masses.
 
 # Exercise 1
 How would you efficiently "zip" two vectors in R ? In other words: we have two vectors
