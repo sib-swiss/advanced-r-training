@@ -101,8 +101,8 @@ in a variable "pvalue" the p-value associated with it ?
 ## B
 The following code fits an ANOVA model:
 
-```r 
-et.seed(1)
+```r
+set.seed(1)
 groups <- rep(LETTERS[1:3], each=5 )
 data <- rnorm( length(groups) )
 model_anova <- aov( data ~ groups )
