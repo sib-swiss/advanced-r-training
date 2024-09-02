@@ -1,4 +1,4 @@
-site_name: My site
+site_name: Advanced R programming
 nav:
     - Home: index.md
     - Precourse preparations: precourse.md
