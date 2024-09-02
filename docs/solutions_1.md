@@ -1,17 +1,3 @@
----
-title: "Advanced R - solutions of the exercises - day 1"
-date: "September 2024"
-keep_md: yes
-output:
-  html_document:
-    df_print: paged
-    keep_md: yes
-  html_notebook: default
-  pdf_document: default
-editor_options:
-  chunk_output_type: inline
----
-
 # Exercise 1
 Suppose we have a list of amino acids, their masses and a protein sequence:
 
