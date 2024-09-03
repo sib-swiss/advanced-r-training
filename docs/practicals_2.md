@@ -111,7 +111,7 @@ random numbers). Test if you can obtain further improvements in speed
 by making the following changes:
 
   * create a matrix containing all the random numbers, and use the
-    `apply() command instead of a loop.
+    `apply()` command instead of a loop.
   * do not use the `mean()` function, but calculate the mean manually
     (using the `sum()` function for example)
 
