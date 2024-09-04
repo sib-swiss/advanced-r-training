@@ -20,10 +20,12 @@ Create a long vector in R, for example
 
 ```r 
 d <- 1:1000000
-How would you efficiently calculate the sum of every 5 adjacent values in the vector (without overlap: the sum of the first five elements, the sum of the next five, etc) ?
+How would you efficiently calculate the sum of every 5 adjacent values in the vector
+(without overlap: the sum of the first five elements, the sum of the next five, etc) ?
 
 B)
-How would you calculate the overlapping sum of 5 adjacent values: the sum of the first five, the sum of the 5 elements starting at the 2nd position, etc)
+How would you calculate the overlapping sum of 5 adjacent values:
+the sum of the first five, the sum of the 5 elements starting at the 2nd position, etc
 
 # Exercise 3
 The following dataset describes the content of a 1024x1024 matrix
