@@ -1,0 +1,955 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../practicals_1/">
+      
+      
+        <link rel="next" href="../practicals_2/">
+      
+      
+      <link rel="icon" href="../assets/images/SIB_logo.svg">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.34">
+    
+    
+      
+        <title>Solutions 1 - Advanced R programming</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.35f28582.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#exercise-1" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Advanced R programming" class="md-header__button md-logo" aria-label="Advanced R programming" data-md-component="logo">
+      
+  <img src="../assets/images/SIB_logo.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Advanced R programming
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Solutions 1
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/sib-swiss/course_website_template" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    sib-swiss/course_website_template
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Advanced R programming" class="md-nav__button md-logo" aria-label="Advanced R programming" data-md-component="logo">
+      
+  <img src="../assets/images/SIB_logo.svg" alt="logo">
+
+    </a>
+    Advanced R programming
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/sib-swiss/course_website_template" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    sib-swiss/course_website_template
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../precourse/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Precourse preparations
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../course_schedule/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Course schedule
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../slides_1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Slides (day 1)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../slides_2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Slides (day 2)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../practicals_1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Practicals 1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Solutions 1
+  </span>
+  
+
+      </a>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../practicals_2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Practicals 2
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../practicals_more/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Practicals - more exercises
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+<h1 id="exercise-1">Exercise 1</h1>
+<p>Suppose we have a list of amino acids, their masses and a protein sequence:</p>
+<div class="highlight"><pre><span></span><code><span class="n">aminoacids</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;A&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;R&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;N&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;D&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;C&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;E&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Q&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;G&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;H&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;I&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;L&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;K&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;M&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;F&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;P&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;S&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;T&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;W&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Y&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;V&quot;</span><span class="w"> </span><span class="p">)</span>
+<span class="n">masses</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">71.0788</span><span class="p">,</span><span class="w"> </span><span class="m">156.1875</span><span class="p">,</span><span class="w"> </span><span class="m">114.1038</span><span class="p">,</span><span class="w"> </span><span class="m">115.0886</span><span class="p">,</span><span class="w"> </span><span class="m">103.1388</span><span class="p">,</span><span class="w"> </span><span class="m">129.1155</span><span class="p">,</span><span class="w"> </span><span class="m">128.1307</span><span class="p">,</span><span class="w"> </span><span class="m">57.0519</span><span class="p">,</span><span class="w"> </span><span class="m">137.1411</span><span class="p">,</span><span class="w"> </span><span class="m">113.1594</span><span class="p">,</span><span class="w"> </span><span class="m">113.1594</span><span class="p">,</span><span class="w"> </span><span class="m">128.1741</span><span class="p">,</span><span class="w"> </span><span class="m">131.1926</span><span class="p">,</span><span class="w"> </span><span class="m">147.1766</span><span class="p">,</span><span class="w"> </span><span class="m">97.1167</span><span class="p">,</span><span class="w"> </span><span class="m">87.0782</span><span class="p">,</span><span class="w"> </span><span class="m">101.1051</span><span class="p">,</span><span class="w"> </span><span class="m">186.2132</span><span class="p">,</span><span class="w"> </span><span class="m">163.1760</span><span class="p">,</span><span class="w"> </span><span class="m">99.1326</span><span class="p">)</span>
+<span class="n">protein</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="s">&quot;MEFARILOP&quot;</span>
+</code></pre></div>
+<p>How can we use R to efficiently calculate the mass of the protein ?</p>
+<p>We first create a named vector for the masses, and split the
+protein into amino acids:</p>
+<div class="highlight"><pre><span></span><code><span class="nf">names</span><span class="p">(</span><span class="n">masses</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">aminoacids</span>
+<span class="n">aa</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">strsplit</span><span class="p">(</span><span class="n">protein</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="p">)[[</span><span class="m">1</span><span class="p">]]</span>
+</code></pre></div>
+<p>(<code>strsplit()</code> returns a list with a single element, so we need to
+extract the vector of amino acids using the bracket notation).</p>
+<p>We can then use the lookup table to calculate the total, making sure
+to remove the missing values (non-existent amino acids and separately
+list the ones that were missing:</p>
+<div class="highlight"><pre><span></span><code><span class="nf">sum</span><span class="p">(</span><span class="n">masses</span><span class="p">[</span><span class="w"> </span><span class="n">aa</span><span class="w"> </span><span class="p">],</span><span class="w"> </span><span class="n">na.rm</span><span class="o">=</span><span class="kc">TRUE</span><span class="p">)</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>## [1] 958.1865
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="c1"># List of missing amino acids</span>
+<span class="n">aa</span><span class="p">[</span><span class="w"> </span><span class="nf">is.na</span><span class="p">(</span><span class="w"> </span><span class="n">masses</span><span class="p">[</span><span class="n">aa</span><span class="p">]</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">]</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>## [1] &quot;O&quot;
+</code></pre></div>
+<h1 id="exercise-2">Exercise 2</h1>
+<p>Suppose that you are given information about the amount of fertilizer used on several parts of a field, in the form of a factor:</p>
+<div class="highlight"><pre><span></span><code><span class="n">fert</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">factor</span><span class="p">(</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">10</span><span class="p">,</span><span class="w"> </span><span class="m">20</span><span class="p">,</span><span class="w"> </span><span class="m">50</span><span class="p">,</span><span class="w"> </span><span class="m">30</span><span class="p">,</span><span class="w"> </span><span class="m">10</span><span class="p">,</span><span class="w"> </span><span class="m">20</span><span class="p">,</span><span class="w"> </span><span class="m">10</span><span class="p">,</span><span class="w"> </span><span class="m">45</span><span class="p">)</span><span class="w"> </span><span class="p">)</span>
+</code></pre></div>
+<p>Starting from the factor, how would you calculate the mean amount of fertilizer used ?</p>
+<p>We can not convert to numeric values directly, because we would only get the
+indices (the link to the levels); we can first convert to character and then
+to numeric:</p>
+<div class="highlight"><pre><span></span><code><span class="nf">mean</span><span class="p">(</span><span class="nf">as.numeric</span><span class="p">(</span><span class="nf">as.character</span><span class="p">(</span><span class="n">fert</span><span class="p">)))</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>## [1] 24.375
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="nf">mean</span><span class="p">(</span><span class="nf">as.numeric</span><span class="p">(</span><span class="nf">as.vector</span><span class="p">(</span><span class="n">fert</span><span class="p">)))</span><span class="w">     </span><span class="c1"># equivalent</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>## [1] 24.375
+</code></pre></div>
+<h1 id="exercise-3a">Exercise 3A</h1>
+<p>The table() function allows you to count the number of occurrences
+of each value in a vector; for example :</p>
+<div class="highlight"><pre><span></span><code><span class="nf">set.seed</span><span class="p">(</span><span class="m">5</span><span class="p">)</span>
+<span class="n">data</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">sample</span><span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="m">10</span><span class="p">,</span><span class="w"> </span><span class="m">10</span><span class="p">,</span><span class="w"> </span><span class="n">replace</span><span class="o">=</span><span class="kc">TRUE</span><span class="p">)</span>
+<span class="n">data</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>##  [1] 2 9 9 9 5 7 7 3 3 6
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="nf">table</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>## data
+## 2 3 5 6 7 9 
+## 1 2 1 1 2 3
+</code></pre></div>
+<p>However, the table has ‘gaps’ in it. How could we obtain the same result, but including all numbers from 1 to 10, with a count of ‘0’ when the value does not appear in the vector ?</p>
+<p>We can make the vector into a factor, and explicitely
+specify the possible levels (1 to 10); table will then
+do the right thing:</p>
+<div class="highlight"><pre><span></span><code><span class="n">data</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">factor</span><span class="p">(</span><span class="w"> </span><span class="n">data</span><span class="p">,</span><span class="w"> </span><span class="n">levels</span><span class="o">=</span><span class="m">1</span><span class="o">:</span><span class="m">10</span><span class="w"> </span><span class="p">)</span>
+<span class="nf">table</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>## data
+##  1  2  3  4  5  6  7  8  9 10 
+##  0  1  2  0  1  1  2  0  3  0
+</code></pre></div>
+<p>Side question: the tabulate() function solves part of our question here, but it is not entirely satisfactory. Why ?</p>
+<div class="highlight"><pre><span></span><code><span class="nf">tabulate</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>## [1] 0 1 2 0 1 1 2 0 3
+</code></pre></div>
+<p>Tabulate will fill in the gaps, but cannot know that
+there are larger values (10) missing. This can be
+specified in its options, however.</p>
+<h1 id="exercise-3b">Exercise 3B</h1>
+<p>When plotting a boxplot, the order of the groups is generally alphabetical; for example, the boxplot created by the following commands has groups A, AB, B, BA, C.</p>
+<div class="highlight"><pre><span></span><code><span class="n">a</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">runif</span><span class="p">(</span><span class="m">100</span><span class="p">)</span>
+<span class="n">groups</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">sample</span><span class="p">(</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;A&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;AB&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;ABC&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;B&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;BC&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;C&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;CA&quot;</span><span class="p">),</span><span class="w"> </span><span class="m">100</span><span class="p">,</span><span class="w"> </span><span class="n">replace</span><span class="o">=</span><span class="kc">TRUE</span><span class="p">)</span>
+<span class="nf">boxplot</span><span class="p">(</span><span class="n">a</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="n">groups</span><span class="p">)</span>
+</code></pre></div>
+<p><img alt="" src="solutions-1_files/figure-html/unnamed-chunk-9-1.png" /><!-- --></p>
+<p>How you can easily force a different order  (e.g. A, B, C, AB, BC, CA, ABC) ?</p>
+<p>We can make the vector into a factor, and specify the
+levels in the order we want them:</p>
+<div class="highlight"><pre><span></span><code><span class="n">groups</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">factor</span><span class="p">(</span><span class="n">groups</span><span class="p">,</span><span class="w"> </span><span class="n">levels</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;A&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;B&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;C&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;AB&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;BC&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;CA&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;ABC&quot;</span><span class="p">))</span>
+<span class="nf">boxplot</span><span class="p">(</span><span class="n">a</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="n">groups</span><span class="p">)</span>
+</code></pre></div>
+<p><img alt="" src="solutions-1_files/figure-html/unnamed-chunk-10-1.png" /><!-- --></p>
+<h1 id="exercice-3c">Exercice 3C</h1>
+<p>When conducting the linear regression described below, all groups are compared to the &ldquo;A&rdquo; group (as the intercept, chosen because it is the first group in alphabetical order). How can we force the lm function to choose group &ldquo;ref&rdquo; as the reference ?</p>
+<div class="highlight"><pre><span></span><code><span class="nf">set.seed</span><span class="p">(</span><span class="m">1</span><span class="p">)</span>
+<span class="n">data</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">runif</span><span class="p">(</span><span class="m">100</span><span class="p">)</span>
+<span class="n">groups</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">rep</span><span class="p">(</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;ref&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;a&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;b&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;c&quot;</span><span class="p">),</span><span class="w"> </span><span class="n">each</span><span class="o">=</span><span class="m">25</span><span class="p">)</span>
+<span class="nf">summary</span><span class="p">(</span><span class="nf">lm</span><span class="p">(</span><span class="n">data</span><span class="o">~</span><span class="n">groups</span><span class="p">))</span>
+</code></pre></div>
+<p><div class="highlight"><pre><span></span><code>## 
+## Call:
+## lm(formula = data ~ groups)
+## 
+## Residuals:
+##      Min       1Q   Median       3Q      Max 
+## -0.52001 -0.17433  0.00602  0.23320  0.46012 
+## 
+## Coefficients:
+##              Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept)  0.533400   0.053933   9.890 2.56e-16 ***
+## groupsb     -0.071713   0.076273  -0.940    0.349    
+## groupsc      0.011115   0.076273   0.146    0.884    
+## groupsref   -0.001615   0.076273  -0.021    0.983    
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 0.2697 on 96 degrees of freedom
+## Multiple R-squared:  0.01517,    Adjusted R-squared:  -0.01561 
+## F-statistic: 0.4929 on 3 and 96 DF,  p-value: 0.688
+</code></pre></div>
+We can transform the vector of groups into a factor, and specify explicitely
+which one is the reference (the first level), using the relevel() function. 
+The model linear that is fitted is exactly the same one, but the display of
+the coefficients change:</p>
+<div class="highlight"><pre><span></span><code><span class="n">groups</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">factor</span><span class="p">(</span><span class="n">groups</span><span class="p">)</span>
+<span class="n">groups</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">relevel</span><span class="p">(</span><span class="n">groups</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;ref&quot;</span><span class="p">)</span>
+<span class="n">groups</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>##   [1] ref ref ref ref ref ref ref ref ref ref ref ref ref ref ref ref ref ref
+##  [19] ref ref ref ref ref ref ref a   a   a   a   a   a   a   a   a   a   a  
+##  [37] a   a   a   a   a   a   a   a   a   a   a   a   a   a   b   b   b   b  
+##  [55] b   b   b   b   b   b   b   b   b   b   b   b   b   b   b   b   b   b  
+##  [73] b   b   b   c   c   c   c   c   c   c   c   c   c   c   c   c   c   c  
+##  [91] c   c   c   c   c   c   c   c   c   c  
+## Levels: ref a b c
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="nf">summary</span><span class="p">(</span><span class="nf">lm</span><span class="p">(</span><span class="n">data</span><span class="o">~</span><span class="n">groups</span><span class="p">))</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>## 
+## Call:
+## lm(formula = data ~ groups)
+## 
+## Residuals:
+##      Min       1Q   Median       3Q      Max 
+## -0.52001 -0.17433  0.00602  0.23320  0.46012 
+## 
+## Coefficients:
+##              Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept)  0.531786   0.053933   9.860 2.97e-16 ***
+## groupsa      0.001615   0.076273   0.021    0.983    
+## groupsb     -0.070098   0.076273  -0.919    0.360    
+## groupsc      0.012730   0.076273   0.167    0.868    
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 0.2697 on 96 degrees of freedom
+## Multiple R-squared:  0.01517,    Adjusted R-squared:  -0.01561 
+## F-statistic: 0.4929 on 3 and 96 DF,  p-value: 0.688
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="n">groups</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">factor</span><span class="p">(</span><span class="n">groups</span><span class="p">,</span><span class="w"> </span><span class="n">levels</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;ref&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;a&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;b&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;c&quot;</span><span class="p">),</span><span class="w"> </span><span class="n">ordered</span><span class="o">=</span><span class="kc">TRUE</span><span class="p">)</span>
+<span class="n">groups</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>##   [1] ref ref ref ref ref ref ref ref ref ref ref ref ref ref ref ref ref ref
+##  [19] ref ref ref ref ref ref ref a   a   a   a   a   a   a   a   a   a   a  
+##  [37] a   a   a   a   a   a   a   a   a   a   a   a   a   a   b   b   b   b  
+##  [55] b   b   b   b   b   b   b   b   b   b   b   b   b   b   b   b   b   b  
+##  [73] b   b   b   c   c   c   c   c   c   c   c   c   c   c   c   c   c   c  
+##  [91] c   c   c   c   c   c   c   c   c   c  
+## Levels: ref &lt; a &lt; b &lt; c
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="nf">summary</span><span class="p">(</span><span class="nf">lm</span><span class="p">(</span><span class="n">data</span><span class="o">~</span><span class="n">groups</span><span class="p">))</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>## 
+## Call:
+## lm(formula = data ~ groups)
+## 
+## Residuals:
+##      Min       1Q   Median       3Q      Max 
+## -0.52001 -0.17433  0.00602  0.23320  0.46012 
+## 
+## Coefficients:
+##              Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept)  0.517847   0.026966  19.203   &lt;2e-16 ***
+## groups.L    -0.007496   0.053933  -0.139    0.890    
+## groups.Q     0.040607   0.053933   0.753    0.453    
+## groups.C     0.050953   0.053933   0.945    0.347    
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 0.2697 on 96 degrees of freedom
+## Multiple R-squared:  0.01517,    Adjusted R-squared:  -0.01561 
+## F-statistic: 0.4929 on 3 and 96 DF,  p-value: 0.688
+</code></pre></div>
+<h1 id="exercise-4a">Exercise 4A</h1>
+<p>The following R code generates random data and fits a linear model:</p>
+<div class="highlight"><pre><span></span><code><span class="nf">set.seed</span><span class="p">(</span><span class="m">1</span><span class="p">)</span>
+<span class="n">x</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">runif</span><span class="p">(</span><span class="m">10</span><span class="p">)</span>
+<span class="n">y</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="m">2</span><span class="o">*</span><span class="n">x</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nf">rnorm</span><span class="p">(</span><span class="m">10</span><span class="p">)</span>
+<span class="n">model</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">lm</span><span class="p">(</span><span class="n">y</span><span class="o">~</span><span class="n">x</span><span class="p">)</span>
+<span class="nf">summary</span><span class="p">(</span><span class="n">model</span><span class="p">)</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>## 
+## Call:
+## lm(formula = y ~ x)
+## 
+## Residuals:
+##     Min      1Q  Median      3Q     Max 
+## -2.3327 -0.6267  0.2447  0.6006  1.2851 
+## 
+## Coefficients:
+##             Estimate Std. Error t value Pr(&gt;|t|)  
+## (Intercept)  -0.1361     0.7648  -0.178    0.863  
+## x             2.4039     1.2186   1.973    0.084 .
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 1.154 on 8 degrees of freedom
+## Multiple R-squared:  0.3273, Adjusted R-squared:  0.2432 
+## F-statistic: 3.891 on 1 and 8 DF,  p-value: 0.08399
+</code></pre></div>
+<p>How would you copy into a variable &ldquo;slope&rdquo; the slope of the regression line (the second regression coefficient) ? And how would you extract in a variable &ldquo;pvalue&rdquo; the p-value associated with it ?</p>
+<p>We can look at the structure of the linear model:</p>
+<div class="highlight"><pre><span></span><code><span class="nf">names</span><span class="p">(</span><span class="n">model</span><span class="p">)</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>##  [1] &quot;coefficients&quot;  &quot;residuals&quot;     &quot;effects&quot;       &quot;rank&quot;         
+##  [5] &quot;fitted.values&quot; &quot;assign&quot;        &quot;qr&quot;            &quot;df.residual&quot;  
+##  [9] &quot;xlevels&quot;       &quot;call&quot;          &quot;terms&quot;         &quot;model&quot;
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="nf">str</span><span class="p">(</span><span class="n">model</span><span class="p">)</span>
+</code></pre></div>
+<p><div class="highlight"><pre><span></span><code>## List of 12
+##  $ coefficients : Named num [1:2] -0.136 2.404
+##   ..- attr(*, &quot;names&quot;)= chr [1:2] &quot;(Intercept)&quot; &quot;x&quot;
+##  $ residuals    : Named num [1:10] -0.792 0.473 0.643 0.345 -0.251 ...
+##   ..- attr(*, &quot;names&quot;)= chr [1:10] &quot;1&quot; &quot;2&quot; &quot;3&quot; &quot;4&quot; ...
+##  $ effects      : Named num [1:10] -3.762 2.276 0.89 0.802 -0.237 ...
+##   ..- attr(*, &quot;names&quot;)= chr [1:10] &quot;(Intercept)&quot; &quot;x&quot; &quot;&quot; &quot;&quot; ...
+##  $ rank         : int 2
+##  $ fitted.values: Named num [1:10] 0.502 0.758 1.241 2.047 0.349 ...
+##   ..- attr(*, &quot;names&quot;)= chr [1:10] &quot;1&quot; &quot;2&quot; &quot;3&quot; &quot;4&quot; ...
+##  $ assign       : int [1:2] 0 1
+##  $ qr           :List of 5
+##   ..$ qr   : num [1:10, 1:2] -3.162 0.316 0.316 0.316 0.316 ...
+##   .. ..- attr(*, &quot;dimnames&quot;)=List of 2
+##   .. .. ..$ : chr [1:10] &quot;1&quot; &quot;2&quot; &quot;3&quot; &quot;4&quot; ...
+##   .. .. ..$ : chr [1:2] &quot;(Intercept)&quot; &quot;x&quot;
+##   .. ..- attr(*, &quot;assign&quot;)= int [1:2] 0 1
+##   ..$ qraux: num [1:2] 1.32 1.12
+##   ..$ pivot: int [1:2] 1 2
+##   ..$ tol  : num 1e-07
+##   ..$ rank : int 2
+##   ..- attr(*, &quot;class&quot;)= chr &quot;qr&quot;
+##  $ df.residual  : int 8
+##  $ xlevels      : Named list()
+##  $ call         : language lm(formula = y ~ x)
+##  $ terms        :Classes &#39;terms&#39;, &#39;formula&#39;  language y ~ x
+##   .. ..- attr(*, &quot;variables&quot;)= language list(y, x)
+##   .. ..- attr(*, &quot;factors&quot;)= int [1:2, 1] 0 1
+##   .. .. ..- attr(*, &quot;dimnames&quot;)=List of 2
+##   .. .. .. ..$ : chr [1:2] &quot;y&quot; &quot;x&quot;
+##   .. .. .. ..$ : chr &quot;x&quot;
+##   .. ..- attr(*, &quot;term.labels&quot;)= chr &quot;x&quot;
+##   .. ..- attr(*, &quot;order&quot;)= int 1
+##   .. ..- attr(*, &quot;intercept&quot;)= int 1
+##   .. ..- attr(*, &quot;response&quot;)= int 1
+##   .. ..- attr(*, &quot;.Environment&quot;)=&lt;environment: R_GlobalEnv&gt; 
+##   .. ..- attr(*, &quot;predvars&quot;)= language list(y, x)
+##   .. ..- attr(*, &quot;dataClasses&quot;)= Named chr [1:2] &quot;numeric&quot; &quot;numeric&quot;
+##   .. .. ..- attr(*, &quot;names&quot;)= chr [1:2] &quot;y&quot; &quot;x&quot;
+##  $ model        :&#39;data.frame&#39;:   10 obs. of  2 variables:
+##   ..$ y: num [1:10] -0.289 1.232 1.884 2.392 0.098 ...
+##   ..$ x: num [1:10] 0.266 0.372 0.573 0.908 0.202 ...
+##   ..- attr(*, &quot;terms&quot;)=Classes &#39;terms&#39;, &#39;formula&#39;  language y ~ x
+##   .. .. ..- attr(*, &quot;variables&quot;)= language list(y, x)
+##   .. .. ..- attr(*, &quot;factors&quot;)= int [1:2, 1] 0 1
+##   .. .. .. ..- attr(*, &quot;dimnames&quot;)=List of 2
+##   .. .. .. .. ..$ : chr [1:2] &quot;y&quot; &quot;x&quot;
+##   .. .. .. .. ..$ : chr &quot;x&quot;
+##   .. .. ..- attr(*, &quot;term.labels&quot;)= chr &quot;x&quot;
+##   .. .. ..- attr(*, &quot;order&quot;)= int 1
+##   .. .. ..- attr(*, &quot;intercept&quot;)= int 1
+##   .. .. ..- attr(*, &quot;response&quot;)= int 1
+##   .. .. ..- attr(*, &quot;.Environment&quot;)=&lt;environment: R_GlobalEnv&gt; 
+##   .. .. ..- attr(*, &quot;predvars&quot;)= language list(y, x)
+##   .. .. ..- attr(*, &quot;dataClasses&quot;)= Named chr [1:2] &quot;numeric&quot; &quot;numeric&quot;
+##   .. .. .. ..- attr(*, &quot;names&quot;)= chr [1:2] &quot;y&quot; &quot;x&quot;
+##  - attr(*, &quot;class&quot;)= chr &quot;lm&quot;
+</code></pre></div>
+The &ldquo;coefficients&rdquo; contains the slope:</p>
+<div class="highlight"><pre><span></span><code><span class="n">model</span><span class="o">$</span><span class="n">coefficients</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>## (Intercept)           x 
+##  -0.1361272   2.4039002
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="n">model</span><span class="o">$</span><span class="n">coefficients</span><span class="p">[</span><span class="m">2</span><span class="p">]</span>
+</code></pre></div>
+<p><div class="highlight"><pre><span></span><code>##      x 
+## 2.4039
+</code></pre></div>
+Note that this requires knowledge about the structure of the variable; it is much
+better to use an accessor function, such as coef(), and to use the name of
+the variable we are interested in rather than the position:</p>
+<div class="highlight"><pre><span></span><code><span class="nf">coef</span><span class="p">(</span><span class="n">model</span><span class="p">)[</span><span class="m">2</span><span class="p">]</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>##      x 
+## 2.4039
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="nf">coef</span><span class="p">(</span><span class="n">model</span><span class="p">)[</span><span class="s">&quot;x&quot;</span><span class="p">]</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>##      x 
+## 2.4039
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="nf">getAnywhere</span><span class="p">(</span><span class="n">coef.default</span><span class="p">)</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>## A single object matching &#39;coef.default&#39; was found
+## It was found in the following places
+##   registered S3 method for coef from namespace stats
+##   namespace:stats
+## with value
+## 
+## function (object, complete = TRUE, ...) 
+## {
+##     cf &lt;- object$coefficients
+##     if (complete) 
+##         cf
+##     else cf[!is.na(cf)]
+## }
+## &lt;bytecode: 0x5628eb6e0068&gt;
+## &lt;environment: namespace:stats&gt;
+</code></pre></div>
+<p>Using coef provides the same result as direct access, but will continue
+to work even if the structure of the object changes.</p>
+<p>The p-value, however, is not provided in this table. This is because it is actually
+calculated only when we ask for the summary:</p>
+<div class="highlight"><pre><span></span><code><span class="n">modelsummary</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">summary</span><span class="p">(</span><span class="n">model</span><span class="p">)</span>
+<span class="nf">class</span><span class="p">(</span><span class="n">modelsummary</span><span class="p">)</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>## [1] &quot;summary.lm&quot;
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="nf">names</span><span class="p">(</span><span class="n">modelsummary</span><span class="p">)</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>##  [1] &quot;call&quot;          &quot;terms&quot;         &quot;residuals&quot;     &quot;coefficients&quot; 
+##  [5] &quot;aliased&quot;       &quot;sigma&quot;         &quot;df&quot;            &quot;r.squared&quot;    
+##  [9] &quot;adj.r.squared&quot; &quot;fstatistic&quot;    &quot;cov.unscaled&quot;
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="n">modelsummary</span><span class="o">$</span><span class="n">coefficients</span><span class="w">   </span><span class="c1"># or, equivalently:</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>##               Estimate Std. Error    t value   Pr(&gt;|t|)
+## (Intercept) -0.1361272   0.764750 -0.1780023 0.86314593
+## x            2.4039002   1.218592  1.9726860 0.08399393
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="nf">coef</span><span class="p">(</span><span class="n">modelsummary</span><span class="p">)</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>##               Estimate Std. Error    t value   Pr(&gt;|t|)
+## (Intercept) -0.1361272   0.764750 -0.1780023 0.86314593
+## x            2.4039002   1.218592  1.9726860 0.08399393
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="nf">coef</span><span class="p">(</span><span class="n">modelsummary</span><span class="p">)[</span><span class="m">2</span><span class="p">,</span><span class="m">4</span><span class="p">]</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>## [1] 0.08399393
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="nf">coef</span><span class="p">(</span><span class="n">modelsummary</span><span class="p">)[</span><span class="s">&quot;x&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Pr(&gt;|t|)&quot;</span><span class="p">]</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>## [1] 0.08399393
+</code></pre></div>
+<h1 id="exercise-4b">Exercise 4B</h1>
+<p>The following code fits an ANOVA model:</p>
+<div class="highlight"><pre><span></span><code><span class="nf">set.seed</span><span class="p">(</span><span class="m">1</span><span class="p">)</span>
+<span class="n">groups</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">rep</span><span class="p">(</span><span class="kc">LETTERS</span><span class="p">[</span><span class="m">1</span><span class="o">:</span><span class="m">3</span><span class="p">],</span><span class="w"> </span><span class="n">each</span><span class="o">=</span><span class="m">5</span><span class="w"> </span><span class="p">)</span>
+<span class="n">data</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">rnorm</span><span class="p">(</span><span class="w"> </span><span class="nf">length</span><span class="p">(</span><span class="n">groups</span><span class="p">)</span><span class="w"> </span><span class="p">)</span>
+<span class="n">model_anova</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">aov</span><span class="p">(</span><span class="w"> </span><span class="n">data</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="n">groups</span><span class="w"> </span><span class="p">)</span>
+<span class="nf">summary</span><span class="p">(</span><span class="n">model_anova</span><span class="p">)</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>##             Df Sum Sq Mean Sq F value Pr(&gt;F)
+## groups       2   0.03  0.0148   0.012  0.988
+## Residuals   12  14.47  1.2059
+</code></pre></div>
+<p>How would you extract the p-value provided by this model into a &ldquo;pvalue&rdquo; variable ?</p>
+<p>As before, we need to look into the object to understand its structure, using str()
+for example. We find that the object contains a list of length 1, which contains a
+data.frame with the information we require:</p>
+<div class="highlight"><pre><span></span><code><span class="n">mysummary</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">summary</span><span class="p">(</span><span class="n">model_anova</span><span class="p">)</span>
+<span class="nf">str</span><span class="p">(</span><span class="n">mysummary</span><span class="p">)</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>## List of 1
+##  $ :Classes &#39;anova&#39; and &#39;data.frame&#39;:    2 obs. of  5 variables:
+##   ..$ Df     : num [1:2] 2 12
+##   ..$ Sum Sq : num [1:2] 0.0296 14.4702
+##   ..$ Mean Sq: num [1:2] 0.0148 1.2059
+##   ..$ F value: num [1:2] 0.0123 NA
+##   ..$ Pr(&gt;F) : num [1:2] 0.988 NA
+##  - attr(*, &quot;class&quot;)= chr [1:2] &quot;summary.aov&quot; &quot;listof&quot;
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="n">mysummary</span><span class="p">[[</span><span class="m">1</span><span class="p">]][</span><span class="s">&quot;groups&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Pr(&gt;F)&quot;</span><span class="p">]</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>## [1] 0.9878183
+</code></pre></div>
+<h1 id="exercise-5">Exercise 5</h1>
+<p>Check how R implements &ldquo;factors&rdquo; in principle. For example, where are
+the labels and the fact that the factor is ordered stored ? Where is
+the function that prints a factor, and the function that makes a
+summary out of the factor ?</p>
+<p>Looking at the summary or the names of the object does not tell us
+anything.  We can use the <code>str()</code> command to show us some information
+about the structure:</p>
+<div class="highlight"><pre><span></span><code><span class="n">fert</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">factor</span><span class="p">(</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">10</span><span class="p">,</span><span class="w"> </span><span class="m">20</span><span class="p">,</span><span class="w"> </span><span class="m">50</span><span class="p">,</span><span class="w"> </span><span class="m">30</span><span class="p">,</span><span class="w"> </span><span class="m">10</span><span class="p">,</span><span class="w"> </span><span class="m">20</span><span class="p">,</span><span class="w"> </span><span class="m">10</span><span class="p">,</span><span class="w"> </span><span class="m">45</span><span class="p">)</span><span class="w"> </span><span class="p">)</span>
+<span class="nf">str</span><span class="p">(</span><span class="n">fert</span><span class="p">)</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>##  Factor w/ 5 levels &quot;10&quot;,&quot;20&quot;,&quot;30&quot;,..: 1 2 5 3 1 2 1 4
+</code></pre></div>
+<p>It does not tell us much about how the data is stored; one other way
+is to remove the &ldquo;factor&rdquo; class, and see what default object is
+printed:</p>
+<div class="highlight"><pre><span></span><code><span class="nf">class</span><span class="p">(</span><span class="n">fert</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="s">&quot;&quot;</span>
+<span class="n">fert</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>## [1] 1 2 5 3 1 2 1 4
+## attr(,&quot;levels&quot;)
+## [1] &quot;10&quot; &quot;20&quot; &quot;30&quot; &quot;45&quot; &quot;50&quot;
+## attr(,&quot;class&quot;)
+## [1] &quot;&quot;
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="nf">typeof</span><span class="p">(</span><span class="n">fert</span><span class="p">)</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>## [1] &quot;integer&quot;
+</code></pre></div>
+<p>We see that the data is stored as a vector of integer, and additional
+information is stored in the attributes of the object. In details:</p>
+<div class="highlight"><pre><span></span><code><span class="n">fert</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">factor</span><span class="p">(</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">10</span><span class="p">,</span><span class="w"> </span><span class="m">20</span><span class="p">,</span><span class="w"> </span><span class="m">50</span><span class="p">,</span><span class="w"> </span><span class="m">30</span><span class="p">,</span><span class="w"> </span><span class="m">10</span><span class="p">,</span><span class="w"> </span><span class="m">20</span><span class="p">,</span><span class="w"> </span><span class="m">10</span><span class="p">,</span><span class="w"> </span><span class="m">45</span><span class="p">)</span><span class="w"> </span><span class="p">)</span>
+<span class="nf">attributes</span><span class="p">(</span><span class="n">fert</span><span class="p">)</span>
+</code></pre></div>
+<p><div class="highlight"><pre><span></span><code>## $levels
+## [1] &quot;10&quot; &quot;20&quot; &quot;30&quot; &quot;45&quot; &quot;50&quot;
+## 
+## $class
+## [1] &quot;factor&quot;
+</code></pre></div>
+We can see that the levels of the factor are saved as an attribute, and
+the class of the variable is set to &ldquo;factor&rdquo;. </p>
+<div class="highlight"><pre><span></span><code><span class="nf">methods</span><span class="p">(</span><span class="n">class</span><span class="o">=</span><span class="s">&quot;factor&quot;</span><span class="p">)</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>##  [1] [             [[            [[&lt;-          [&lt;-           all.equal    
+##  [6] as.character  as.data.frame as.Date       as.list       as.logical   
+## [11] as.POSIXlt    as.vector     c             coerce        droplevels   
+## [16] format        initialize    is.na&lt;-       length&lt;-      levels&lt;-     
+## [21] Math          Ops           plot          print         relevel      
+## [26] relist        rep           show          slotsFromS3   summary      
+## [31] Summary       xtfrm        
+## see &#39;?methods&#39; for accessing help and source code
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="c1"># print.factor</span>
+<span class="c1"># summary.factor</span>
+</code></pre></div>
+<p>We can see in the list the methods print and summary, so that the two
+functions are print.factor and summary.factor (which you can print and
+look at if you want)</p>
+<div class="highlight"><pre><span></span><code><span class="n">fert</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">factor</span><span class="p">(</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">10</span><span class="p">,</span><span class="w"> </span><span class="m">20</span><span class="p">,</span><span class="w"> </span><span class="m">50</span><span class="p">,</span><span class="w"> </span><span class="m">30</span><span class="p">,</span><span class="w"> </span><span class="m">10</span><span class="p">,</span><span class="w"> </span><span class="m">20</span><span class="p">,</span><span class="w"> </span><span class="m">10</span><span class="p">,</span><span class="w"> </span><span class="m">45</span><span class="p">),</span><span class="w"> </span><span class="n">ordered</span><span class="o">=</span><span class="kc">TRUE</span><span class="w"> </span><span class="p">)</span>
+<span class="nf">attributes</span><span class="p">(</span><span class="n">fert</span><span class="p">)</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>## $levels
+## [1] &quot;10&quot; &quot;20&quot; &quot;30&quot; &quot;45&quot; &quot;50&quot;
+## 
+## $class
+## [1] &quot;ordered&quot; &quot;factor&quot;
+</code></pre></div>
+<p>In the case of an ordered factor, there is a second class, &ldquo;ordered&rdquo;;
+otherwise, the data is stored in the same way.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.07f07601.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.56dfad97.min.js"></script>
+      
+    
+  </body>
+</html>
