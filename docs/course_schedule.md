@@ -11,7 +11,7 @@
 | introduction 	| 9:00 AM  	| 9:15 AM 	| [Introduction] |
 | block 1 	| 9:15 AM  	| 10:30 AM 	| [Reproducible research](slides_1.md) |
 |         	| 10:30 AM 	| 11:00 AM 	| BREAK                          	|
-| block 2 	| 11:00 AM 	| 12:30 PM 	| Data structure |
+| block 2 	| 11:00 AM 	| 12:30 PM 	| Positron & quarto. Data structure |
 |         	| 12:30 PM 	| 1:30 PM  	| BREAK                          	|
 | block 3 	| 1:30 PM  	| 3:00 PM  	| Exercices |
 |         	| 3:00 PM  	| 3:30 PM  	| BREAK                          	|
@@ -38,6 +38,6 @@
 |           | 10:30 AM 	| 11:00 AM 	| BREAK                               	|
 | block 2  	| 11:00 AM 	| 12:30 PM 	| Advanced exercices |
 |           | 12:30 PM 	| 1:30 PM  	| BREAK                               	|
-| block 3 	| 1:30 PM  	| 3:00 PM  	||
+| block 3 	| 1:30 PM  	| 3:00 PM  	|  |
 |         	| 3:00 PM  	| 3:30 PM  	| BREAK                               	|
 | block 4  	| 3:30 PM 	| 5:15 PM 	| |
