@@ -116,4 +116,4 @@ How would you extract the p-value provided by this model into a
 Check how R implements "factors" in principle. For example, where are
 the labels and the fact that the factor is ordered stored ? Where is
 the function that prints a factor, and the function that makes a
-summary out of the factor ?
+summary out of the factor ? 
