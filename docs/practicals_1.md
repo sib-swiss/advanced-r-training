@@ -1,11 +1,14 @@
 Apart from the exercices suggested below, we suggest that you experiment with the topics we discussed this morning (especially those that you do not feel comfortable with): create and work with lists and factors, explore objects, etc.
 
-# Exercice 0
+# Exercise 0
 
-If you are not comfortable yet with knitr and RMarkdown, try them. You
-can follow the exercises given at the end of the introductory
-slides. Do not hesitate to ask for help and material if required (we
-will not discuss knitr and Rmarkdown in more details during this
+If you are not comfortable yet with knitr and RMarkdown/Quarto, try
+them. You can for example follow the exercises given at the end of the
+introductory slides to get introduced to these tools, and ideally use
+them afterwards when you work on the next exercises.
+
+Do not hesitate to ask for help and additional material if required
+(we will not discuss knitr and Rmarkdown in more details during this
 course).
 
 # Exercise 1
@@ -24,7 +27,7 @@ to get individual letters, and then create some lookup table to find
 the masses and sum them.
 
 
-# Exercice 2
+# Exercise 2
 Suppose that you are given information about the amount of fertilizer used on several parts of a field, in the form of a factor:
 
 ```r 
@@ -53,7 +56,7 @@ However, the table has ‘gaps’ in it. How could we obtain the same
 result, but including all numbers from 1 to 10, with a count of ‘0’
 when the value does not appear in the vector ?
 
-Side question: the tabulate() function solves part of our question
+Side question: the `tabulate()` function solves part of our question
 here, but it is not entirely satisfactory. Why ?
 
 ## B
