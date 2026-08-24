@@ -1,35 +1,15 @@
-# Course website template
+[![License: CC BY-SA 4.0](https://img.shields.io/badge/License-CC_BY--SA_4.0-lightgrey.svg)](https://creativecommons.org/licenses/by-sa/4.0/)
 
-**Find instructions at [sib-swiss.github.io/gh-pages-training/](https://sib-swiss.github.io/gh-pages-training/).**
+This is the Git repository for the website of the SIB course "Advanced R".
 
-This website is generated with [MkDocs](https://www.mkdocs.org/), with the theme [Material](https://squidfunk.github.io/mkdocs-material/).
+This website is hosted at: https://sib-swiss.github.io/advanced-r-training/
 
-To host it locally, install MkDocs:
-```bash
-pip install mkdocs
-```
+More information about this course (and when it is offered next) is available from https://www.sib.swiss/training/course/20260824_APRWR
 
-and Material:
-```bash
-pip install mkdocs-material
-```
 
-Fork this repository and clone it to your local computer. Then, make the repository your current directory and type:
+# Course website "R advanced"
 
-```bash
-mkdocs serve
-```
+## Authors
 
-To host it locally.
-
-Check it out with your browser at [http://localhost:8000/](http://localhost:8000/).
-
-For an automatically generated github page, you can run:
-
-```sh
-mkdocs gh-deploy
-```
-
-This will generate a webpage at:
-
-https://yourname.github.io/reponame
+- Frédéric Schütz [ORCiD](https://orcid.org/0000-0001-7048-7692)
+- Frédéric Burdet [ORCiD](https://orcid.org/0000-0002-2923-827X)
