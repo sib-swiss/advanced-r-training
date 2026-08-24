@@ -107,7 +107,7 @@ Compare the following ways of creating the result:
 
 # Exercise 5
 Go back to the exercice where we calculated many times the mean of several
-random numbers). Test if you can obtain further improvements in speed
+random numbers. Test if you can obtain further improvements in speed
 by making the following changes:
 
   * create a matrix containing all the random numbers, and use the

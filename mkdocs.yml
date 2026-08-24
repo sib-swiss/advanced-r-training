@@ -16,8 +16,8 @@ theme:
   favicon: assets/images/SIB_logo.svg
 
 # Repository
-repo_name: sib-swiss/course_website_template
-repo_url: https://github.com/sib-swiss/course_website_template
+repo_name: sib-swiss/advanced-r-training
+repo_url: https://github.com/sib-swiss/advanced-r-training
 
 markdown_extensions:
   - abbr
