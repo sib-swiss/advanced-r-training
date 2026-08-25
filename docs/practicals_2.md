@@ -1,4 +1,4 @@
-# Exercice 1
+# Exercise 1
 
 Create an S3 class from scratch; imagine the name of the class, a
 function that creates it (and includes some data in it), and define at
@@ -29,7 +29,7 @@ genes. In a second step, it should also be able to take into account
 duplicate gene measurements, in a way or another (average them ? take
 only the maximum ?).
 
-# Exercice 2
+# Exercise 2
 
 The `summary()` function, when applied to numeric values, displays the
 "five-number summary" of the values, as in the following example:
@@ -47,7 +47,7 @@ In a second step, make sure to call the original summary function to
 create the output, before adding a new column to it.
 
 
-# Exercice 3
+# Exercise 3
 ## A
 
 During the course, we discussed how to improve the efficiency of the
@@ -115,7 +115,7 @@ by making the following changes:
   * do not use the `mean()` function, but calculate the mean manually
     (using the `sum()` function for example)
 
-# Exercice 6
+# Exercise 6
 Improve as much as possible the execution time of the following piece
 of code (seen in the course):
 
